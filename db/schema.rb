@@ -10,12 +10,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20_200_816_012_145) do
+ActiveRecord::Schema.define(version: 20_200_816_013_524) do
   # These are extensions that must be enabled in order to support this database
   enable_extension 'plpgsql'
 
   create_table 'cups', force: :cascade do |t|
-    t.integer 'type'
+    t.integer 'kind'
     t.string 'image'
     t.datetime 'created_at', precision: 6, null: false
     t.datetime 'updated_at', precision: 6, null: false
