@@ -1,6 +1,9 @@
 class GamesController < ApplicationController
   def index
-    @games = Game.all
+  end
+
+  def find
+    redirect_to game_path(slug: game_params[:slug]) if game_params[:slug]
   end
 
   def new
@@ -9,11 +12,11 @@ class GamesController < ApplicationController
 
   def create
     @game = Game.new(game_params)
-    @game.save
+    redirect_to game_path(slug: @game.slug) if @game.save
   end
 
   def show
-    @game = Game.find_by(game_params[:slug])
+    @game = Game.find_by(slug: params.permit(:slug)[:slug]) or not_found
   end
 
   private
