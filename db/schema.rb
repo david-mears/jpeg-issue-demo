@@ -10,13 +10,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20_200_816_010_221) do
+ActiveRecord::Schema.define(version: 20_200_816_012_145) do
   # These are extensions that must be enabled in order to support this database
   enable_extension 'plpgsql'
 
   create_table 'cups', force: :cascade do |t|
     t.integer 'type'
     t.string 'image'
+    t.datetime 'created_at', precision: 6, null: false
+    t.datetime 'updated_at', precision: 6, null: false
+    t.integer 'game_id'
+  end
+
+  create_table 'games', force: :cascade do |t|
+    t.string 'slug'
     t.datetime 'created_at', precision: 6, null: false
     t.datetime 'updated_at', precision: 6, null: false
   end
@@ -26,5 +33,6 @@ ActiveRecord::Schema.define(version: 20_200_816_010_221) do
     t.integer 'allegiance'
     t.datetime 'created_at', precision: 6, null: false
     t.datetime 'updated_at', precision: 6, null: false
+    t.integer 'game_id'
   end
 end

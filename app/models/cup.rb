@@ -1,4 +1,7 @@
 class Cup < ApplicationRecord
+  belongs_to :game
+  validates :type, presence: true
+
   NAMES = {
     accursed_chalice: 'The Accursed Chalice',
     merlins_goblet: "Merlin's Goblet",
