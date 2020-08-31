@@ -24,5 +24,4 @@ class GamesController < ApplicationController
   def game_params
     params.require(:game).permit(:slug, :number_of_players)
   end
-
 end

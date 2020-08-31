@@ -9,7 +9,7 @@ class Game < ApplicationRecord
   private
 
   def create_cups
-    filenames = Cup.get_three_random_filenames
+    filenames = Cup.read_n_random_filenames(3)
     cups = []
     Cup::NAMES.keys.each_with_index do |kind, index|
       cup = Cup.create(game: self, kind: kind.to_s, image: filenames[index])
@@ -21,7 +21,7 @@ class Game < ApplicationRecord
 
   def create_players
     players = []
-    self.number_of_players.to_i.times do
+    number_of_players.to_i.times do
       player = Player.create(game: @game)
       player.save
       players.push player

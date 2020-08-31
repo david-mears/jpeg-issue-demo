@@ -6,7 +6,7 @@ AllCops:
     - 'node_modules/**/*'
     - 'app/channels/**/*'
 
-Metrics/LineLength:
+Layout/LineLength:
   Max: 120
 
 Style/Documentation:
