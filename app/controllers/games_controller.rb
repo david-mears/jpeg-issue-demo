@@ -1,6 +1,5 @@
 class GamesController < ApplicationController
-  def index
-  end
+  def index; end
 
   def find
     redirect_to game_path(slug: game_params[:slug]) if game_params[:slug]
