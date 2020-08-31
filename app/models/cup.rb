@@ -1,6 +1,7 @@
 class Cup < ApplicationRecord
   belongs_to :game
   validates :kind, presence: true
+  validates :image, presence: true
 
   NAMES = {
     accursed_chalice: 'The Accursed Chalice',
@@ -13,4 +14,9 @@ class Cup < ApplicationRecord
   # rubocop:enable Metrics/LineLength
 
   enum kind: { accursed_chalice: 0, merlins_goblet: 1, holy_grail: 2 }
+
+  def self.get_three_random_filenames
+    filenames = FILENAMES.dup
+    [filenames.shuffle!.pop, filenames.shuffle!.pop, filenames.shuffle!.pop]
+  end
 end
