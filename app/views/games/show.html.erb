@@ -4,5 +4,5 @@
 <h2>Cups:</h2>
 <% @game.cups.each do |cup| %>
   <h3><%= cup.human_readable_name%></h3>
-  <%= image_tag(cup.image, height: '100', alt: cup.human_readable_name) %>
+  <%= image_tag("cups/#{cup.image}", height: '100', alt: cup.human_readable_name) %>
 <% end %>
