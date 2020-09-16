@@ -2,11 +2,7 @@
 
 * Ruby version
 
-2.6.6
-
-* System dependencies
-
-PostgreSQL 12.2
+2.7.1
 
 * Install library dependencies
 
@@ -14,12 +10,6 @@ E.g. rails. These are managed by bundler:
 
 ```bash
 bundle install
-```
-
-* Database creation
-
-```bash
-rails db:migrate
 ```
 
 * Running the server

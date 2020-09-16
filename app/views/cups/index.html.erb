@@ -1,0 +1,12 @@
+<h1>Cups and the Rails JPEG issue</h1>
+
+There are a lot of cup images in this project. I googled for cups and chose ones I liked, for my side project. Some of them happened to be jpeg files. These ones cause issues in production environments (Heroku).
+
+The issue occurs in production environments, not locally.
+
+<br/>
+<% Cup.filenames.each do |cup| %>
+  <br/>
+  <%# Replace . with 'dot' so that I can pass the filename as a param %>
+  <%= link_to cup, cup_path(cup: cup.gsub('.', 'dot')) %>
+<% end %>
