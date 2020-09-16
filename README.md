@@ -1,3 +1,5 @@
+[![Open Source Helpers](https://www.codetriage.com/david-mears/jpeg-issue-demo/badges/users.svg)](https://www.codetriage.com/david-mears/jpeg-issue-demo)
+
 # README
 
 This is a small app to demonstrate an issue with Rails asset pipeline and .jpeg files.
